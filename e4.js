@@ -7,24 +7,25 @@ var gen1 = [
 
 var gen2 = [];
 
-var gameboard1 = $E('div', {'class':'gameboard'});
-var gameboard2 = $E('div', {'class':'gameboard'});
-
 var initialize = function() {
-  for (var r=0; r<gen1.length; r++) {
+  draw_board(gen1);
+};
+
+var draw_board = function(genData) {
+  var board = $E('div', {'class':'gameboard'});
+  for (var r=0; r<genData.length; r++) {
     var rowElem = $E('div', {'class':'row'});
-    for (var c=0; c<gen1[r].length; c++) {
-      rowElem.insert($E('div', {'class': 'cell', html: gen1[r][c]}));
+    for (var c=0; c<genData[r].length; c++) {
+      rowElem.insert($E('div', {'class': 'cell', html: genData[r][c]}));
     }
-    gameboard1.append(rowElem);
+    board.append(rowElem);
   }
-  $('container').append(gameboard1);  
+  $('container').append(board);
 };
 
 var run = function() {
   for (var r=0; r<gen1.length; r++) {
     gen2[r] = [];
-    var rowElem = $E('div', {'class':'row'});
     
     for (var c=0; c<gen1[r].length; c++) {
       var neighbors=0, row;
@@ -44,16 +45,14 @@ var run = function() {
 	  
       // Determine next generation
       gen2[r][c] = gen1[r][c];
-      if (gen2[r][c] && neighbors<2 || neighbors>3) 
+      if (gen2[r][c] && (neighbors<2 || neighbors>3))
         gen2[r][c] = 0; //Over or under population
 
       if (!gen2[r][c] && neighbors==3) 
         gen2[r][c] = 1; //Reproduction
-
-      rowElem.insert($E('div', {'class': 'cell', html: gen2[r][c]}));
     }
-    gameboard2.append(rowElem);
   }
-  $('container').append(gameboard2);
+
+  draw_board(gen2);
 };
 
