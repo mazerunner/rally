@@ -1,14 +1,14 @@
 
 #Software as a Service
-#Application to Rally Software
+##Application to Rally Software
 
 
-##Exercise 4 - Game of Life
+###Exercise 4 - Game of Life
 
 I kept it simple for this exercise.  I envisioned many
 enhancements.
 
-##Enhancements:
+####Enhancements:
  Continue generations, random population, etc.
 
 
