@@ -2,6 +2,7 @@
 #Software as a Service
 ##Application to Rally Software
 
+Steve Wilder (stevew.techrg@gmail.com)
 
 ###Exercise 4 - Game of Life
 
