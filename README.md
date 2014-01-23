@@ -6,14 +6,9 @@ Steve Wilder (stevew.techrg@gmail.com)
 
 ###Exercise 4 - Game of Life
 
-I kept it simple for this exercise.  I envisioned many
-enhancements.
+I chose this example because I liked the exercise.
 
 ####Enhancements:
  Continue generations, random population, etc.
 
-
-
-
-
-
+ 

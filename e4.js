@@ -44,11 +44,12 @@ var run = function() {
       if (gen1[r][c+1]) neighbors+= gen1[r][c+1]; //Neighbors right
 	  
       // Determine next generation
-      gen2[r][c] = gen1[r][c];
-      if (gen2[r][c] && (neighbors<2 || neighbors>3))
+      gen2[r][c] = gen1[r][c]; //By default, no change
+	  
+      if (gen1[r][c] && (neighbors<2 || neighbors>3))
         gen2[r][c] = 0; //Over or under population
 
-      if (!gen2[r][c] && neighbors==3) 
+      if (!gen1[r][c] && neighbors==3) 
         gen2[r][c] = 1; //Reproduction
     }
   }
